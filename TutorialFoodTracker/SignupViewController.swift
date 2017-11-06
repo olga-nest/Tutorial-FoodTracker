@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Properties
     
@@ -37,5 +37,26 @@ class SignupViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func saveUserLoginData() {
+        var username: String
+        var password: String
+        if !(usernameTextField.text?.isEmpty)! && !(passwordTextField.text?.isEmpty)! {
+            username = usernameTextField.text!
+            password = passwordTextField.text!
+            
+            UserDefaults.standard.set(username, forKey: "username")
+            UserDefaults.standard.set(password, forKey: "password")
+            
+            usernameTextField.text = ""
+            passwordTextField.text = ""
+        }
+       
+    }
+    
+    //MARK: Actions
+    @IBAction func SignupButtonTapped(_ sender: UIButton) {
+        saveUserLoginData()
+    }
 
 }
