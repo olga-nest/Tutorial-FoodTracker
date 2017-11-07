@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import UICKeyChainStore
 
 class WebService {
     
@@ -92,10 +93,6 @@ class WebService {
                 print("data returned is not json, or not valid")
                 return
             }
-            let user = User()
-            user.parse(with: json)
-            
-            presentingViewController.dismiss(animated: true, completion: nil)
             
             guard response.statusCode == 200 else {
                 // handle error
@@ -103,9 +100,12 @@ class WebService {
                 return
             }
             
+            UICKeyChainStore.setString(json[Constants.Keys.Network.User.token] as? String, forKey: Constants.Keys.Keychain.token)
+                 //       UICKeyChainStore.setString(json["token"] as? String, forKey: Constants.Keys.Keychain.token)
         }
-        // do something with the json object
+        
         task.resume()
+        presentingViewController.performSegue(withIdentifier: Constants.SeugueIdentifiers.mealTableView, sender: UIButton())
     }
     
 }
