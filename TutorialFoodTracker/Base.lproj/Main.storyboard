@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CWo-w8-oY4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CWo-w8-oY4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,6 +64,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="lit-wv-wgb" kind="presentation" identifier="toSignupScreen" id="ely-qY-kse"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBP-98-ugP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,8 +80,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5uG-9W-pYx">
-                                <rect key="frame" x="20" y="84" width="335" height="410"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5uG-9W-pYx">
+                                <rect key="frame" x="20" y="84" width="335" height="416"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Slq-4g-W4j">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
@@ -95,8 +99,8 @@
                                             <outletCollection property="gestureRecognizers" destination="TaF-sO-gkX" appends="YES" id="KpE-7b-uJF"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bYK-fc-zr2" customClass="RatingControl" customModule="TutorialFoodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="41.5" y="366" width="252" height="44"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bYK-fc-zr2" customClass="RatingControl" customModule="TutorialFoodTracker" customModuleProvider="target">
+                                        <rect key="frame" x="41.5" y="366" width="252" height="50"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -158,6 +162,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrf-SA-fcj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="390" y="134"/>
+        </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="AQG-fd-yyE">
+            <objects>
+                <viewController id="lit-wv-wgb" customClass="SignupViewController" customModule="TutorialFoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qdA-kn-6ee">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="69U-4z-WX3">
+                                <rect key="frame" x="19" y="266" width="337.5" height="155.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BP-io-6wh">
+                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKs-BH-oKx">
+                                        <rect key="frame" x="0.0" y="35.5" width="337.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="enu-9t-aUj">
+                                        <rect key="frame" x="0.0" y="80.5" width="337.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rk-ym-Cbh">
+                                        <rect key="frame" x="0.0" y="125.5" width="337.5" height="30"/>
+                                        <color key="backgroundColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                                        <state key="normal" title="Signup">
+                                            <color key="titleColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SignupButtonTapped:" destination="lit-wv-wgb" eventType="touchUpInside" id="D2N-MS-X40"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="69U-4z-WX3" firstAttribute="centerX" secondItem="Sz1-dH-XNA" secondAttribute="centerX" id="Uc5-L1-TeR"/>
+                            <constraint firstItem="69U-4z-WX3" firstAttribute="centerY" secondItem="Sz1-dH-XNA" secondAttribute="centerY" id="YPv-Iw-WEr"/>
+                            <constraint firstItem="69U-4z-WX3" firstAttribute="width" secondItem="qdA-kn-6ee" secondAttribute="width" multiplier="0.9" id="aBO-z0-M3V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sz1-dH-XNA"/>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="enu-9t-aUj" id="oa2-iN-zLV"/>
+                        <outlet property="signupButton" destination="4rk-ym-Cbh" id="Iri-BV-7s6"/>
+                        <outlet property="usernameTextField" destination="pKs-BH-oKx" id="UtV-IL-3SK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UaU-lX-xDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400.80000000000001" y="922.48875562218893"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sxW-oa-dTz">
