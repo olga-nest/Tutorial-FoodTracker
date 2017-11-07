@@ -15,6 +15,7 @@ struct Constants
         static let signup = "toSignupScreen"
         static let addItem = "AddItem"
         static let showDetail = "ShowDetail"
+        static let login = "toLoginScreen"
     }
     
     struct Keys {
