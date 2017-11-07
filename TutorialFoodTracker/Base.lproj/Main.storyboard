@@ -287,6 +287,7 @@
                                                 <connections>
                                                     <action selector="SignupButtonTapped:" destination="lit-wv-wgb" eventType="touchUpInside" id="mva-3y-tzu"/>
                                                     <action selector="loginButtonTapped:" destination="5bZ-iG-CBN" eventType="touchUpInside" id="BnZ-Te-tWE"/>
+                                                    <segue destination="jSq-bb-gam" kind="show" identifier="toMealTableView" id="iwc-VV-TVh"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -337,5 +338,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3jB-PW-5Rf"/>
+        <segue reference="iwc-VV-TVh"/>
     </inferredMetricsTieBreakers>
 </document>
