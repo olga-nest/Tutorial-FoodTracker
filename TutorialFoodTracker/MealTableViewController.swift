@@ -8,6 +8,7 @@
 
 import UIKit
 import os.log
+import UICKeyChainStore
 
 class MealTableViewController: UITableViewController {
     
@@ -31,10 +32,11 @@ class MealTableViewController: UITableViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        checkAuthentication()
     }
+    
+
     
     // MARK: - Table view data source
     
@@ -146,6 +148,9 @@ class MealTableViewController: UITableViewController {
             }
             let selectedMeal = meals[indexPath.row]
             mealDetailViewController.meal = selectedMeal
+            
+        case Constants.SeugueIdentifiers.signup:
+            os_log("Navigating to Signup screen")
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
@@ -188,37 +193,17 @@ class MealTableViewController: UITableViewController {
     private func loadMeals() -> [Meal]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL.path) as? [Meal]
     }
+    
+    //MARK: Helper
+    fileprivate func checkAuthentication() {
+        // check to see if a token exists
+        // if not, show sign-up screen
+        if UICKeyChainStore.string(forKey: Constants.Keys.Keychain.token) == nil
+        {
+            performSegue(withIdentifier: Constants.SeugueIdentifiers.signup, sender: self)
+        }
+        
+        // if so, proceed to the meals screen
+    }
         
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
