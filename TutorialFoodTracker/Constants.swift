@@ -16,6 +16,7 @@ struct Constants
         static let addItem = "AddItem"
         static let showDetail = "ShowDetail"
         static let login = "toLoginScreen"
+        static let mealTableView = "toMealTableView"
     }
     
     struct Keys {
