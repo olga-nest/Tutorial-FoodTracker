@@ -132,9 +132,9 @@ class MealTableViewController: UITableViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      super.prepare(for: segue, sender: sender)
         switch (segue.identifier ?? "") {
-        case "AddItem":
+        case Constants.SeugueIdentifiers.addItem:
             os_log("Adding a new meal.", log: OSLog.default, type: .debug)
-        case "ShowDetail":
+        case Constants.SeugueIdentifiers.showDetail:
             guard let mealDetailViewController = segue.destination as? MealViewController
                 else {
                     fatalError("Unexpected destination: \(segue.destination)")

@@ -13,6 +13,8 @@ struct Constants
     struct SeugueIdentifiers {
         //TODO: Add other segues identifiers
         static let signup = "toSignupScreen"
+        static let addItem = "AddItem"
+        static let showDetail = "ShowDetail"
     }
     
     struct Keys {
