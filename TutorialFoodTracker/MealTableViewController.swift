@@ -110,6 +110,12 @@ class MealTableViewController: UITableViewController {
      }
     
     
+    @IBAction func signOutButtonTapped(_ sender: UIBarButtonItem) {
+        UICKeyChainStore.removeItem(forKey: Constants.Keys.Keychain.token)
+        checkAuthentication()
+    }
+    
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation

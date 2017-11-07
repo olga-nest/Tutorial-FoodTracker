@@ -7,6 +7,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,11 +59,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Meals" id="ruF-iQ-bFC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9FZ-jC-UPh">
-                            <connections>
-                                <segue destination="aYE-3x-2Tn" kind="presentation" identifier="AddItem" id="xTW-Re-QJH"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="9FZ-jC-UPh">
+                                <connections>
+                                    <segue destination="aYE-3x-2Tn" kind="presentation" identifier="AddItem" id="xTW-Re-QJH"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Sign out" id="rVy-UZ-MZx">
+                                <connections>
+                                    <action selector="signOutButtonTapped:" destination="jSq-bb-gam" id="fXQ-YL-A1r"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <segue destination="lit-wv-wgb" kind="presentation" identifier="toSignupScreen" id="ely-qY-kse"/>
