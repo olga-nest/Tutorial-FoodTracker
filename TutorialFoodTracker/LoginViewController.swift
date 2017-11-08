@@ -21,9 +21,15 @@ class LoginViewController: UIViewController {
 
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        WebService.shared.login(with: usernameField.text!, password: passwordField.text!, and: self)
-    }
-    
 
-  
+        WebService.shared.login(with: usernameField.text!, password: passwordField.text!, { success in
+            if success {
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "toMealTableView", sender: nil)
+                }
+            } else {
+                print("failed to login")
+            }
+        })
+    }
 }

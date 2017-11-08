@@ -287,7 +287,6 @@
                                                 <connections>
                                                     <action selector="SignupButtonTapped:" destination="lit-wv-wgb" eventType="touchUpInside" id="mva-3y-tzu"/>
                                                     <action selector="loginButtonTapped:" destination="5bZ-iG-CBN" eventType="touchUpInside" id="BnZ-Te-tWE"/>
-                                                    <segue destination="jSq-bb-gam" kind="show" identifier="toMealTableView" id="iwc-VV-TVh"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -308,6 +307,7 @@
                     <connections>
                         <outlet property="passwordField" destination="8IF-CH-dxY" id="ghg-bu-H42"/>
                         <outlet property="usernameField" destination="Sti-SP-FKd" id="fos-Ac-oA1"/>
+                        <segue destination="CWo-w8-oY4" kind="show" identifier="toMealTableView" id="bDE-Mn-3fW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQh-wR-cWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -338,6 +338,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3jB-PW-5Rf"/>
-        <segue reference="iwc-VV-TVh"/>
     </inferredMetricsTieBreakers>
 </document>
