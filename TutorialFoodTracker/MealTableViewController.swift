@@ -110,20 +110,10 @@ class MealTableViewController: UITableViewController {
      }
     
     
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
+    @IBAction func signOutButtonTapped(_ sender: UIBarButtonItem) {
+        UICKeyChainStore.removeItem(forKey: Constants.Keys.Keychain.token)
+        checkAuthentication()
+    }
     
     
      // MARK: - Navigation
@@ -132,9 +122,9 @@ class MealTableViewController: UITableViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      super.prepare(for: segue, sender: sender)
         switch (segue.identifier ?? "") {
-        case "AddItem":
+        case Constants.SeugueIdentifiers.addItem:
             os_log("Adding a new meal.", log: OSLog.default, type: .debug)
-        case "ShowDetail":
+        case Constants.SeugueIdentifiers.showDetail:
             guard let mealDetailViewController = segue.destination as? MealViewController
                 else {
                     fatalError("Unexpected destination: \(segue.destination)")
